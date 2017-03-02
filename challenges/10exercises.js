@@ -79,15 +79,103 @@ function translate(text) {
 
 
 
-// Define a function reverse() that computes the reversal of a string.
+// 6. Define a function reverse() that computes the reversal of a string.
 // For example, reverse("jag testar") should return the string "ratset gaj".
 
-// Represent a small bilingual lexicon as a Javascript object in the following fashion
-//{"merry":"god", "christmas":"jul", "and":"och", "happy":gott", "new":"nytt", "year":"år"}
+  function reverse(text) {
+    return text.split('').reverse().join('');
+    // var textArray = text.split('');
+    // var reverseArray = textArray.reverse();
+    // var reversedText = textArray.join('');
+    // return reversedText;
+  }
+
+
+// 7. Represent a small bilingual lexicon as a Javascript object in the following fashion
+//{"merry":"god", "christmas":"jul", "and":"och", "happy":"gott", "new":"nytt", "year":"år"}
 //and use it to translate your Christmas cards from English into Swedish.
 
-//Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
+var lexicon = {
+"merry":"god",
+"christmas":"jul",
+"and":"och",
+"happy":"gott",
+"new":"nytt",
+"year":"år"
+}
 
-//Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
+function translate(text) {
+  return text.split(" ").reduce( function(accumulator, word) {
+    if (lexicon[word]) {
+      accumulator.push(lexicon[word])
+    }
+    return accumulator
+  }, []).join(" ")
+}
 
-//Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
+//Other ways of doing it:
+// var textArray = text.split(" "); //['merry', 'christmas']
+// var translatedText = [];
+//
+// textArray.forEach( function(word) {
+//    if (lexicon[word]) {
+//      translatedText.push(lexicon[word])
+//    }
+// })
+//
+// return translatedText.join(" ");
+
+// for ( var i = 0; i < textArray.length; i++ ) {
+//  var currentWord = textArray[i];
+//  for ( var english in lexicon ) {
+//    if ( currentWord === english ) {
+//      translatedText.push(lexicon[english]);
+//    }
+//  }
+// }
+//when word in 'text' string equals to key in 'christmasCard' object, return value of that key
+
+
+
+//8. Write a function findLongestWord() that takes an array of words and returns the length of the longest one.
+
+function findLongestWord(text){
+  var textArray = text.split(" ");
+  var longestWord = 0;
+  for (var i=0; i < textArray.length; i++) {
+    if (textArray[i].length > longestWord) {
+      longestWord = textArray[i].length;
+    }
+  }
+return longestWord; //what if we want it to return the actual word?
+}
+
+
+//9. Write a function filterLongWords() that takes an array of words and an integer i and returns the array of words that are longer than i.
+
+  function filterLongWords(array, integer) {
+    var filterLongWords = function(array, integer){
+      var length = array.length;
+      var longestWords = [];
+      for (i = 0; i < length; i++) {
+        if (array[i].length > integer) {
+          longestWords[longestWords.length] = array[i];
+        }
+      }
+      return longestWords;
+    }
+}
+
+
+// 10. Write a function charFreq() that takes a string and builds a frequency listing of the characters contained in it. Represent the frequency listing as a Javascript object. Try it with something like charFreq("abbabcbdbabdbdbabababcbcbab").
+
+ function charFreq(string){
+    return string.split('').reduce( function (accumulator, char){
+     if (!accumulator[char]) {
+       accumulator[char] = 1
+     } else {
+       accumulator[char] += 1
+     }
+     return accumulator
+   }, {})
+}
