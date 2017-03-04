@@ -88,8 +88,50 @@ function removeSmallest(arr) {
 // 5. Create a function that takes an array of numbers and returns the sum of the two lowest positive integers. No floats or empty arrays will be used in any of the test cases.
 // https://edabit.com/challenge/GNgCfKHWfQwByBNqa
 
+
+function sumTwoSmallestNums(array) {
+  var checkedArray = []
+  for (var i = 0; i < array.length; i++){
+    if (array[i] >= 0) {
+      checkedArray.push(array[i])
+    }
+  }
+
+    var firstLowestNumberIndex = checkedArray.indexOf(Math.min.apply(null, checkedArray))
+    var firstLowestNumber = checkedArray.splice(firstLowestNumberIndex, 1)
+    console.log('firstLowest number', firstLowestNumber)
+
+
+
+    var secondLowestNumberIndex = checkedArray.indexOf(Math.min.apply(null, checkedArray))
+    var secondLowestNumber = checkedArray.splice(secondLowestNumberIndex, 1)
+    console.log('secondLowestNumber', secondLowestNumber)
+
+    let lowestNumbersArray = firstLowestNumber.concat(secondLowestNumber)
+    console.log(firstLowestNumber.concat(secondLowestNumber))
+
+    return sum(lowestNumbersArray)
+
+}
+
+ function sum(checkedArray) {
+   var total = 0;
+   for (var i = 0; i < checkedArray.length; i++) {
+     total = total + checkedArray[i];
+   }
+   return total;
+ }
+
+
+
 // 6. Create a function that accepts an array of 10 integers (between 0 and 9) and returns a string of those numbers in the form of a phone number.
 // https://edabit.com/challenge/Z6oY6EWwT9rde8YXm
+
+function formatPhoneNumber(numbers) {
+  var formattedPhoneNumber = "(" + numbers.slice(0,3).join('') + ") "  + numbers.slice(3,6).join('') + "-" + numbers.slice(6).join('')
+  return formattedPhoneNumber
+}
+
 
 // 7. Create a function that takes an array of names and returns an array with the first letter capitalized.
 // https://edabit.com/challenge/ZN5cpGPNRS3nrjMo5
