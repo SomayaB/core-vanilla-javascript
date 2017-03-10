@@ -11,9 +11,9 @@ Exercism provides a number of practice problems along with unit tests to ensure 
 
 ### Day 1 - Exercism
 
-- [ ] Solve `/exercism/hamming`
+- [x] Solve `/exercism/hamming`
 - [ ] Solve `/exercism/diamond`
-- [ ] Solve `/exercism/bracket-push`
+- [x] Solve `/exercism/bracket-push`
 - [ ] Solve `/exercism/ocr-numbers`
 - [ ] Solve `/exercism/bowling`
 

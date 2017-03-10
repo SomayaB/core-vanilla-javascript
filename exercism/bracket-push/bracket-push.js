@@ -20,7 +20,7 @@ var openingBracketsArr = []
 
   function check(element){
     if( paren.includes(element) ){
-      return 'Im a paren' //why in quotes?
+      return 'Im a paren'
     }else if( curly.includes(element) ){
       return 'Im a curly'
     }else if( square.includes(element) ){
