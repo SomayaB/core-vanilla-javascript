@@ -1,4 +1,4 @@
-# Core Vanilla JavaScript
+# Core Vanilla JavaScript Team #smoggy-tanager Candida & Somaya
 
 This repo contains resources, challenges and plans for learning the basics of Javascripts.
 
