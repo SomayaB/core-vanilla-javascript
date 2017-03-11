@@ -8,7 +8,7 @@ describe('Diamond', function() {
     expect(diamond.makeDiamond('A')).toEqual(result);
   });
 
-  it('test letter C', function() {
+  xit('test letter C', function() {
     result = ["  A  ",
               " B B ",
               "C   C",
@@ -17,7 +17,7 @@ describe('Diamond', function() {
     expect(diamond.makeDiamond('C')).toEqual(result);
   });
 
-  it('test letter E', function() {
+  xit('test letter E', function() {
     result = ["    A    ",
               "   B B   ",
               "  C   C  ",
